@@ -1,0 +1,14 @@
+simple_lottery_homepage:
+    path:     /
+    defaults: { _controller: SimpleLotteryBundle:Participant:addParticipant }
+
+simple_lottery_thankyou:
+    path: /thank-you
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    SimpleLotteryBundle:SimpleLottery:thankyou.html.twig
+
+simple_lottery_winner:
+    path: /winner
+    defaults: { _controller: SimpleLotteryBundle:Participant:createWinner }
+

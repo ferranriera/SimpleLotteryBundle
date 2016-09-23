@@ -1,0 +1,24 @@
+{% extends '::base.html.twig' %}
+
+{%  block body %}
+    <div class="col-md-6 col-md-offset-3">
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1>Register to win the lottery</h1>
+                {{ form_start(form, {'attr': {'id': 'contactForm'} }) }}
+                {{ form_errors(form.nickName) }}
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                {{ form_widget(form.nickName,{'attr': {'placeholder': 'Enter your nickname', 'class': 'form-control'} }) }}
+                        </div>
+                    </div>
+                <div class="row">
+                    <div class="form-group col-centered">
+                {{ form_widget(form.save,{'label': 'Send','attr': {'placeholder': 'Enter your nickname', 'class': 'btn btn-outline btn-xl'} }) }}
+                        </div>
+                    </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
