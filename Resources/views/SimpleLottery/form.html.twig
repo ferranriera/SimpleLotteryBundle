@@ -18,7 +18,16 @@
                     </div>
                 </div>
                 {{ form_end(form) }}
+                <div class="form-group col-centered">
+                <span>{% if count > 0 %}
+                    There are {{ count }} participants
+                    {% else %}
+                    Nobody has participated yet
+                    {% endif %}</span>
+                </div>
             </div>
+
         </div>
     </div>
+
 {% endblock %}

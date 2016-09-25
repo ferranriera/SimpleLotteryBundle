@@ -19,10 +19,12 @@ class ParticipantController extends Controller
         // handle the submit (will only happen on POST)
         $form->handleRequest($request);
 
+        $em = $this->getDoctrine()->getManager();
+        $count = $em->getRepository('SimpleLotteryBundle:Participant')->count();
+
         if ($form->isSubmitted() && $form->isValid()) {
 
             // save the User
-            $em = $this->getDoctrine()->getManager();
             $em->persist($participant);
             $em->flush();
 
@@ -32,7 +34,8 @@ class ParticipantController extends Controller
         }
 
         return $this->render("SimpleLotteryBundle:SimpleLottery:form.html.twig", array(
-            'form' => $form->createview()
+            'form' => $form->createview(),
+            'count' => $count
         ));
     }
 
