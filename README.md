@@ -1,5 +1,11 @@
 # SimpleLotteryBundle Installation
 
+This is a Test bundle to test the power of the symfony framework.
+
+This bundle provides:
+- A Form to persist in the database a nickname.
+- A Random Lottery raffle that show the winner.
+
 ## Prerequisites
 
 This version of the bundle requires Symfony 2.8.
