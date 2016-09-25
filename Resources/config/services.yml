@@ -1,7 +1,3 @@
-parameters:
-    app.mailer.transport: sendmail
-    app.mailer.template: template
-
 services:
     lottery.winner:
         class:        SimpleLotteryBundle\Extensions\Winner
