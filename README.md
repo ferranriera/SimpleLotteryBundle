@@ -27,7 +27,7 @@ Add this bundle into src/ folder
 
 ## Enable the Bundle
 
-Enable the blog bundle in your AppKernel, additionally you need to enable KnpPaginatorBundle.
+Enable the SimpleLotteryBundle bundle in your AppKernel
 
 ``` php
 <?php
