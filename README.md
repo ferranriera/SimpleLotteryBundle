@@ -6,6 +6,8 @@ This bundle provides:
 - A Form to persist in the database a nickname.
 - A Random Lottery raffle that show the winner.
 
+There is an example of the project on-line in: http://lottery.feerb.com/
+
 ## Prerequisites
 
 This version of the bundle requires Symfony 2.8.
