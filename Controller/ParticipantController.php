@@ -41,7 +41,6 @@ class ParticipantController extends Controller
 
     public function createWinnerAction()
     {
-        $winner="";
 
         $em = $this->getDoctrine()->getManager();
         $count = $em->getRepository('SimpleLotteryBundle:Participant')->count();
