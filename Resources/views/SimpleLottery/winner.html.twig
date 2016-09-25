@@ -4,7 +4,11 @@
     <div class="col-md-8 col-md-offset-4">
         <div class="header-content">
             <div class="header-content-inner">
-                <h1>The winner is: {{ nickName }}</h1>
+                <h1>{% if count > 0 %}
+                The winner is: {{ nickName }}
+                {% else %}
+                There isn't any participation
+                {% endif %} </h1>
             </div>
         </div>
     </div>

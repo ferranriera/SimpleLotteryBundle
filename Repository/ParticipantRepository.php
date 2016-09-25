@@ -10,4 +10,17 @@ namespace SimpleLotteryBundle\Repository;
  */
 class ParticipantRepository extends \Doctrine\ORM\EntityRepository
 {
+    /**
+     *
+     * @return int
+     */
+    public function count()
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQuery(
+            ' SELECT COUNT(p) FROM SimpleLotteryBundle:Participant p '
+        );
+        return $query->getSingleScalarResult();
+    }
+
 }

@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class ParticipantController extends Controller
 {
+
     public function addParticipantAction(Request $request)
     {
         // build the form
@@ -37,23 +38,19 @@ class ParticipantController extends Controller
 
     public function createWinnerAction()
     {
-        //TODO: Do it random
-        $query = $this->getDoctrine()->getEntityManager()->createQueryBuilder();
-        $query
-            ->select(array('d.id'))
-            ->from('SimpleLotteryBundle:Participant', 'd');
+        $winner="";
 
-        //if
-        $results = $query->getQuery()->getResult();
-        $winnerId = $results[array_rand($results,1)];
+        $em = $this->getDoctrine()->getManager();
+        $count = $em->getRepository('SimpleLotteryBundle:Participant')->count();
 
-        $participant = $this->getDoctrine()
-            ->getRepository('SimpleLotteryBundle:Participant')
-            ->find($winnerId);
-
+        if ($count>0){
+            $winner = $this->get('lottery.winner');
+            $winner = $winner->createRandomWinner();
+        }
 
         return $this->render("SimpleLotteryBundle:SimpleLottery:winner.html.twig", array(
-                'nickName' => $participant->nickName,
+                'nickName' => $winner,
+                'count' => $count
             )
         );
     }

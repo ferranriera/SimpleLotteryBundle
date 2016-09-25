@@ -1,4 +1,8 @@
+parameters:
+    app.mailer.transport: sendmail
+    app.mailer.template: template
+
 services:
-#    simple_lottery.example:
-#        class: SimpleLotteryBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+    lottery.winner:
+        class:        SimpleLotteryBundle\Extensions\Winner
+        arguments: [@doctrine.orm.entity_manager]
